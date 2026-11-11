@@ -2,8 +2,7 @@
 
 ## Integrante
 - **Nome:** Beatriz Vitória Lourenço Vitoriano
-- **Dupla:** atividade realizada individualmente.
-
+- 
 ## Visão geral
 Projeto didático com três serviços Java independentes, executados em processos separados e integrados por HTTP:
 - **Produtos** (`produtos-service`): catálogo fixo, porta `8081`.
@@ -118,8 +117,3 @@ Os 13 cenários foram executados localmente em JDK 21 e os status coincidiram co
     └── testes.http
 ```
 
-## Participação e commits
-Projeto desenvolvido individualmente por Beatriz Vitória Lourenço Vitoriano. Os commits identificam as etapas e os arquivos adicionados ao repositório; não há autoria ou participação fictícia de uma segunda pessoa.
-
-## Limitações
-Os serviços escutam em `127.0.0.1`, não usam banco, autenticação, HTTPS ou filas. Os registros são perdidos quando o processo correspondente reinicia. Os timeouts da integração de Entregas são 2 segundos para conexão e 3 segundos para requisição.
