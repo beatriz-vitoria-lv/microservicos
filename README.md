@@ -2,7 +2,7 @@
 
 ## Integrante
 - **Nome:** Beatriz Vitória Lourenço Vitoriano
-- 
+
 ## Visão geral
 Projeto didático com três serviços Java independentes, executados em processos separados e integrados por HTTP:
 - **Produtos** (`produtos-service`): catálogo fixo, porta `8081`.
