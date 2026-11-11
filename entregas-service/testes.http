@@ -1,0 +1,56 @@
+### E01 - Criar pedido primeiro em pedidos-service/testes.http; depois criar entrega - esperado 201
+POST http://localhost:8083/entregas
+Content-Type: text/plain
+
+1
+
+### E02 - Consultar entrega criada - esperado 200
+GET http://localhost:8083/entregas/1
+
+### E03 - Pedido inexistente - esperado 422
+POST http://localhost:8083/entregas
+Content-Type: text/plain
+
+999
+
+### E04 - Corpo inválido - esperado 400
+POST http://localhost:8083/entregas
+Content-Type: text/plain
+
+abc
+
+### E05 - ID zero - esperado 400
+POST http://localhost:8083/entregas
+Content-Type: text/plain
+
+0
+
+### E06 - ID inválido na consulta - esperado 400
+GET http://localhost:8083/entregas/abc
+
+### E07 - Entrega inexistente - esperado 404
+GET http://localhost:8083/entregas/999
+
+### E08 - Método incorreto - esperado 405 e Allow: POST
+GET http://localhost:8083/entregas
+
+### E09 - Rota desconhecida - esperado 404
+GET http://localhost:8083/rota-inexistente
+
+### E10 - Execute SOMENTE depois de parar Pedidos; esperado 503
+POST http://localhost:8083/entregas
+Content-Type: text/plain
+
+1
+
+### E11 - Com Pedidos parado, consultar entrega previamente criada - esperado 200
+GET http://localhost:8083/entregas/1
+
+### E12 - Pare Produtos, mantenha Pedidos e Entregas ativos; esperado 201
+POST http://localhost:8083/entregas
+Content-Type: text/plain
+
+1
+
+### E13 - Reinicie Entregas e consulte ID anterior; esperado 404
+GET http://localhost:8083/entregas/1
